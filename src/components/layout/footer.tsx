@@ -5,8 +5,11 @@ import { MenuItem } from "@/types/menu-item";
 
 export const Footer = () => {
   const menu: MenuItem[] = [
-    { label: "Weapons Kit", href: "/categories/camisas" },
-    { label: "Armor Kit", href: "/categories/kits" },
+    { label: "Armors", href: "/categories/armors" },
+    { label: "Weapons (Melee)", href: "/categories/weapons" },
+    { label: "Bows", href: "/categories/bows" },
+    { label: "Staffs", href: "/categories/staffs" },
+    { label: "Instruments", href: "/categories/instruments" },
   ];
 
   return (

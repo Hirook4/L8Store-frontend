@@ -7,6 +7,7 @@ import { useEffect } from "react";
 import { CartProductList } from "./cart-product-list";
 import { FinishPurchaseButton } from "./finish-puchase-button";
 import Link from "next/link";
+import { ShippingBox } from "./shipping-box";
 
 type Props = {
   initialCartProducts: CartListItem[];
@@ -46,7 +47,7 @@ export const CartContainer = ({
           <CartProductList initialList={initialCartProducts} />
         </div>
         <div className="flex-1 flex flex-col gap-4 md:max-w-sm">
-          {/* Frete */}
+          <ShippingBox />
           <div className="bg-white border border-gray-200 rounded-sm">
             <div className="border-b border-gray-200 p-6">
               <div className="flex justify-between items-center mb-5">

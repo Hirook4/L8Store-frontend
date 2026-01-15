@@ -1,14 +1,15 @@
+import { getBanners } from "@/actions/get-banners";
 import { Banners } from "@/components/home/banners";
 import { MostSold } from "@/components/home/most-sold";
 import { MostViewed } from "@/components/home/most-viewed";
 import { ProductListSkeleton } from "@/components/home/product-list-skeleton";
-import { data } from "@/data";
 import Image from "next/image";
 import { Suspense } from "react";
-export default function Page() {
+export default async function Page() {
+  const banners = await getBanners();
   return (
     <div className="pb-96">
-      <Banners list={data.banners} />
+      <Banners list={banners} />
       <div className="flex flex-col md:flex-row gap-4 md:gap-8 mt-6 md:mt-12">
         <div className="flex flex-1 py-6 border border-gray-200 rounded-sm">
           <div className="w-32 border-r border-gray-200 flex justify-center items-center">
@@ -48,12 +49,13 @@ export default function Page() {
           </div>
         </div>
       </div>
-      {/* Equanto o componente não carregar o Skeleton vai ser exibido */}
+      {/* Enquanto o componente não carregar o Skeleton vai ser exibido */}
       <Suspense fallback={<ProductListSkeleton />}>
         <MostViewed />
       </Suspense>
-      <MostSold />
-      <Suspense fallback={<ProductListSkeleton />}></Suspense>
+      <Suspense fallback={<ProductListSkeleton />}>
+        <MostSold />
+      </Suspense>
     </div>
   );
 }

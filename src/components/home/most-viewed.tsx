@@ -1,8 +1,9 @@
-import { data } from "@/data";
 import { ProductList } from "../product-list";
+import { getProducts } from "@/actions/get-products";
 
 /* Requisição dos produtos */
 export const MostViewed = async () => {
+  const products = await getProducts({ orderBy: "views", limit: 4 });
   return (
     <div className="mt-10">
       <h2 className="text-2xl text-center md:text-left">Most Viewed</h2>
@@ -10,7 +11,7 @@ export const MostViewed = async () => {
         most viewed and wished products
       </p>
       <div className="mt-9">
-        <ProductList list={data.products} />
+        <ProductList list={products} />
       </div>
     </div>
   );

@@ -16,8 +16,9 @@ export function Header() {
   const menu: MenuItem[] = [
     { label: "Armors", href: "/categories/armors" },
     { label: "Weapons", href: "/categories/weapons" },
-    { label: "Staffs", href: "/categories/staffs" },
     { label: "Bows", href: "/categories/bows" },
+    { label: "Staffs", href: "/categories/staffs" },
+    { label: "Instruments", href: "/categories/instruments" },
   ];
 
   const [menuOpened, setMenuOpened] = useState(false);
