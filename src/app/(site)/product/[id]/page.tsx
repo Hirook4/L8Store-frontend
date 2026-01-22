@@ -1,10 +1,11 @@
+import { getProductWithCategory } from "@/actions/get-product-with-category";
 import { ImageSlider } from "@/components/product/image-slider";
 import { ProductDescription } from "@/components/product/product-description";
 import { ProductDetails } from "@/components/product/product-details";
 import { RelatedProducts } from "@/components/product/related-products";
 import { RelatedProductsSkeleton } from "@/components/product/related-products-skeleton";
-import { data } from "@/data";
 import Link from "next/link";
+import { redirect } from "next/navigation";
 import { Suspense } from "react";
 
 type Props = {
@@ -13,11 +14,20 @@ type Props = {
 
 export default async function Page({ params }: Props) {
   const { id } = await params;
+
+  const data = await getProductWithCategory(id);
+  if (!data) {
+    redirect("/");
+  }
+
   return (
     <div>
       <div className="text-gray-500 mb-4">
-        <Link href={""}>Home</Link> &gt; <Link href={"/"}>Temp</Link> &gt;
-        Product {data.product.id}
+        <Link href={""}>Home</Link> &gt;{" "}
+        <Link href={`/category/${data.category.slug}`}>
+          {data.category.name}
+        </Link>{" "}
+        &gt; Product {data.product.label}
       </div>
 
       <div className="flex flex-col md:flex-row gap-6 md:gap-32">

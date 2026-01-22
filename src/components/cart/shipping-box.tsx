@@ -9,7 +9,7 @@ export const ShippingBox = () => {
   const { token, hydrated } = useAuthStore((state) => state);
   const cartStore = useCartStore((state) => state);
 
-  /*   if (!hydrated) return null; */
+  if (!hydrated) return null;
 
   return (
     <div className="flex flex-col gap-4">

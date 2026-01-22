@@ -7,6 +7,7 @@ import { useCartStore } from "@/store/cart";
 import { Addresses } from "@/types/addresses";
 import { useEffect, useState, useTransition } from "react";
 import { AddressModal } from "./address-modal";
+import { addUserAddress } from "@/actions/add-user-address";
 
 export const ShippingBoxLogged = () => {
   const { token, hydrated } = useAuthStore((state) => state);
@@ -16,15 +17,12 @@ export const ShippingBoxLogged = () => {
   const [pending, startTransition] = useTransition();
 
   useEffect(() => {
-    if (token) {
+    if (hydrated && token) {
       startTransition(() => {
-        getUserAddresses(token).then((res) => {
-          console.log("Endereços carregados com sucesso!", res);
-          setAddresses(res);
-        });
+        getUserAddresses(token).then(setAddresses);
       });
     }
-  }, [token]);
+  }, [token, hydrated]);
 
   useEffect(() => {
     if (cartStore.selectedAddressId) {
@@ -43,7 +41,7 @@ export const ShippingBoxLogged = () => {
   };
 
   const handleSelectAddress = async (
-    e: React.ChangeEvent<HTMLSelectElement>
+    e: React.ChangeEvent<HTMLSelectElement>,
   ) => {
     cartStore.clearShipping();
     const id = parseInt(e.target.value);
@@ -53,6 +51,15 @@ export const ShippingBoxLogged = () => {
         cartStore.setShippingZipcode(address.zipcode);
         cartStore.setSelectedAddressId(id);
       }
+    }
+  };
+
+  const handleAddAddress = async (address: Addresses) => {
+    if (!token) return;
+    const newAddresses = await addUserAddress(token, address);
+    if (newAddresses) {
+      setAddresses(newAddresses);
+      setModalOpen(false);
     }
   };
 
@@ -79,7 +86,11 @@ export const ShippingBoxLogged = () => {
       >
         add new address
       </button>
-      <AddressModal open={modalOpen} onClose={() => setModalOpen(false)} />
+      <AddressModal
+        open={modalOpen}
+        onAdd={handleAddAddress}
+        onClose={() => setModalOpen(false)}
+      />
     </div>
   );
 };

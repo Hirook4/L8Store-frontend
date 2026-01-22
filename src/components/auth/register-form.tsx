@@ -1,10 +1,7 @@
 "use client";
 
-import { login } from "@/actions/login";
 import { register } from "@/actions/register";
-import { setAuthCookie } from "@/actions/set-auth-cookie";
 import { useAuthStore } from "@/store/auth";
-
 import Link from "next/link";
 import { redirect } from "next/navigation";
 import { ChangeEvent, FormEvent, useState, useTransition } from "react";

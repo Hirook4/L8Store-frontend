@@ -3,9 +3,11 @@
 import { api } from "@/libs/axios";
 import { Product } from "@/types/products";
 
-export const getProductsFromList = async (ids: (string | number)[]) => {
+export const getRelatedProducts = async (id: number) => {
   try {
-    const response = await api.post("/cart/mount", { ids });
+    const response = await api.get(`/product/${id}/related`, {
+      params: { limit: 4 },
+    });
     if (response.status === 200) {
       return response.data.products as Product[];
     }

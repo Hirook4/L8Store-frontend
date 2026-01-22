@@ -6,7 +6,6 @@ const schema = z.object({
   zipcode: z.string().min(1, "zipcode is required"),
   street: z.string().min(1, "street is required"),
   number: z.string().min(1, "number is required"),
-  neighborhood: z.string().min(1, "neighborhood is required"),
   city: z.string().min(1, "city is required"),
   state: z.string().min(1, "state is required"),
   country: z.string().min(1, "country is required"),
@@ -19,7 +18,7 @@ type Props = {
   onAdd: (address: Addresses) => Promise<void>;
 };
 
-export const AddressModal = ({ open, onClose, onAdd }: Props) => {
+export const AddressModal = ({ open, onAdd, onClose }: Props) => {
   const [form, setForm] = useState<Addresses>({
     zipcode: "",
     street: "",
@@ -133,8 +132,8 @@ export const AddressModal = ({ open, onClose, onAdd }: Props) => {
             disabled={pending}
           />
           <button
-            className="bg-blue-600 text-white p-4 rounded-sm"
             type="submit"
+            className=" cursor-pointer bg-blue-600 text-white p-4 rounded-sm"
             disabled={pending}
           >
             {pending ? "saving..." : "save address"}

@@ -6,9 +6,9 @@ import { MenuItem } from "@/types/menu-item";
 export const Footer = () => {
   const menu: MenuItem[] = [
     { label: "Armors", href: "/categories/armors" },
-    { label: "Weapons (Melee)", href: "/categories/weapons" },
+    { label: "Weapons", href: "/categories/weapons" },
     { label: "Bows", href: "/categories/bows" },
-    { label: "Staffs", href: "/categories/staffs" },
+    { label: "Magics", href: "/categories/magics" },
     { label: "Instruments", href: "/categories/instruments" },
   ];
 
@@ -88,7 +88,7 @@ export const Footer = () => {
               </h4>
               <div className="flex flex-row justify-between gap-6">
                 <FooterButton href="" icon="/assets/ui/instagram.png" />
-                <FooterButton href="" icon="/assets/ui/linkedin.png" />
+                <FooterButton href="" icon="/assets/ui/linkedIn.png" />
                 <FooterButton href="" icon="/assets/ui/facebook.png" />
                 <FooterButton href="" icon="/assets/ui/x.png" />
               </div>

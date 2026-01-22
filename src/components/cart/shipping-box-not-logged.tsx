@@ -1,11 +1,10 @@
 import { getShippingInfo } from "@/actions/get-shipping-info";
 import { useCartStore } from "@/store/cart";
-import { get } from "http";
 
 export const ShippingBoxNotLogged = () => {
   const cartStore = useCartStore((state) => state);
 
-  const handleUpdateShippinh = async () => {
+  const handleUpdateShipping = async () => {
     if (cartStore.shippingZipCode.length > 4) {
       const shippingInfo = await getShippingInfo(cartStore.shippingZipCode);
       if (shippingInfo) {
@@ -26,7 +25,7 @@ export const ShippingBoxNotLogged = () => {
       />
       <button
         className="cursor-pointer text-white  px-6 py-5 bg-blue-600  border-0 rounded-sm"
-        onClick={handleUpdateShippinh}
+        onClick={handleUpdateShipping}
       >
         calculate
       </button>

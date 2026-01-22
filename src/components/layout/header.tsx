@@ -17,7 +17,7 @@ export function Header() {
     { label: "Armors", href: "/categories/armors" },
     { label: "Weapons", href: "/categories/weapons" },
     { label: "Bows", href: "/categories/bows" },
-    { label: "Staffs", href: "/categories/staffs" },
+    { label: "Magics", href: "/categories/magics" },
     { label: "Instruments", href: "/categories/instruments" },
   ];
 
@@ -27,7 +27,7 @@ export function Header() {
     <header className="bg-white border-b border-gray-300">
       <div className="bg-black text-white text-center p-3">
         <strong>FREE SHIPPING</strong> to the entire Kingdom (except for Lost
-        Izalith) on purchases over R$199,00. <strong>ENJOY!</strong>
+        Izalith) on purchases over $199,00. <strong>ENJOY!</strong>
       </div>
       <div className="w-full max-w-6xl mx-auto p-6">
         <div className="flex items-center">

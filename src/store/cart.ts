@@ -10,7 +10,7 @@ type CartState = {
   addItem(cartItem: CartItem): void;
   removeItem(productId: string | number): void;
   updateQuantity(productId: string | number, quantity: number): void;
-  setShippingZipcode(zipCode: string): void;
+  setShippingZipcode(zipcode: string): void;
   setShippingCost(cost: number): void;
   setShippingDays(days: number): void;
   setSelectedAddressId(addressId: number | null): void;
@@ -33,7 +33,7 @@ export const useCartStore = create<CartState>((set) => ({
         newCart = state.cart.map((item) =>
           item.productId === productId
             ? { ...item, quantity: item.quantity + quantity }
-            : item
+            : item,
         );
         return { cart: newCart };
       } else {
@@ -51,12 +51,12 @@ export const useCartStore = create<CartState>((set) => ({
   updateQuantity: (productId, quantity) =>
     set((state) => {
       const newCart = state.cart.map((item) =>
-        item.productId === productId ? { ...item, quantity } : item
+        item.productId === productId ? { ...item, quantity } : item,
       );
       return { cart: newCart };
     }),
 
-  setShippingZipcode: (zipCode) => set({ shippingZipCode: zipCode }),
+  setShippingZipcode: (zipcode) => set({ shippingZipCode: zipcode }),
 
   setShippingCost: (cost) => set({ shippingCost: cost }),
 
