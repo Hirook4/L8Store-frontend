@@ -47,6 +47,15 @@ export const AddressModal = ({ open, onAdd, onClose }: Props) => {
       return;
     }
     setError("");
+    setForm({
+      zipcode: "",
+      street: "",
+      number: "",
+      city: "",
+      state: "",
+      country: "",
+      complement: "",
+    });
     startTransition(async () => {
       try {
         await onAdd(form);
