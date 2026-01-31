@@ -14,42 +14,53 @@ export const Footer = () => {
 
   return (
     <footer>
-      <div className="bg-white border-t border-gray-200 px-6 py-14">
-        <div className="w-full max-w-6xl mx-auto p-6 flex flex-col md:flex-row items-center gap-6">
+      <div className="relative  border-t border-orange-500 px-6 py-14 overflow-hidden">
+        <Image
+          src="/assets/backgrounds/footer.png"
+          alt=""
+          fill
+          priority
+          className="object-cover"
+        />
+
+        <div className="relative w-full max-w-6xl mx-auto p-6 flex flex-col md:flex-row items-center gap-6">
           <Image
-            src={"/assets/ui/mail-send-line.png"}
+            src="/assets/ui/mail-send-line.png"
             alt=""
             width={68}
             height={68}
           />
+
           <div className="text-center md:text-left">
-            <h3 className="font-bold text-2xl mb-6 md:mb-2">
+            <h3 className="font-bold text-white text-2xl mb-6 md:mb-2">
               stay updated on promotions
             </h3>
-            <p className="text-gray-400">
+            <p className="text-neutral-500">
               enter your email and be the first to know
             </p>
           </div>
+
           <form
             method="POST"
             className="w-full flex-1 flex flex-col gap-4 md:flex-row"
           >
             <input
               type="text"
-              className="flex-1 border border-gray-200 rounded-sm px-6 py-5 outline-0"
+              className="flex-1 border border-neutral-500 rounded-sm px-6 py-5 outline-0 placeholder-neutral-500"
               placeholder="your best email"
             />
             <input
               type="submit"
               value="send"
-              className="w-full md:w-50 px-6 py-5 bg-blue-600 text-white border-0 rounded-sm"
+              className="w-full md:w-50 px-6 py-5 bg-orange-500 text-white border-0 rounded-sm"
             />
           </form>
         </div>
       </div>
+
       <div className="bg-black text-white">
         <div className="w-full max-w-6xl mx-auto px-6">
-          <div className="flex flex-col md:flex-row justify-between items-center gap-6 py-16 md:py-10 border-b border-gray-700">
+          <div className="flex flex-col md:flex-row justify-between items-center gap-6 py-16 md:py-10 border-b border-neutral-500">
             <Link href="/">
               <Image
                 src={"/assets/ui/logo-white.png"}
@@ -66,7 +77,7 @@ export const Footer = () => {
               ))}
             </ul>
           </div>
-          <div className="flex flex-col md:flex-row gap-6 py-16 md:py-10 border-b border-gray-700">
+          <div className="flex flex-col md:flex-row gap-6 py-16 md:py-10 border-b border-neutral-500">
             <div className="flex-1">
               <h4 className="mb-6 text-center md:text-left">need help?</h4>
               <div className="flex flex-col md:flex-row gap-6">

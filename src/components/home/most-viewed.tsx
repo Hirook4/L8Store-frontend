@@ -7,7 +7,7 @@ export const MostViewed = async () => {
   return (
     <div className="mt-10">
       <h2 className="text-2xl text-center md:text-left">Most Viewed</h2>
-      <p className="text-gray-500 text-center md:text-left">
+      <p className="text-neutral-500 text-center md:text-left">
         most viewed and wished products
       </p>
       <div className="mt-9">

@@ -64,7 +64,7 @@ export const LoginForm = () => {
   return (
     <form
       onSubmit={handleSubmit}
-      className="bg-white border border-gray-300 p-8 rounded-sm"
+      className=" border border-neutral-300 p-8 rounded-sm"
     >
       <h2 className="text-xl font-bold mb-4">Login</h2>
       <div className="mb-4">
@@ -75,7 +75,7 @@ export const LoginForm = () => {
           type="email"
           value={form.email}
           onChange={handleChange}
-          className="w-full border border-gray-300 rounded-sm px-3 py-2"
+          className="w-full border border-neutral-300 rounded-sm px-3 py-2"
           disabled={pending}
         />
         {errors.email && (
@@ -89,7 +89,7 @@ export const LoginForm = () => {
           type="password"
           value={form.password}
           onChange={handleChange}
-          className="w-full border border-gray-300 rounded-sm px-3 py-2"
+          className="w-full border border-neutral-300 rounded-sm px-3 py-2"
           disabled={pending}
         />
         {errors.password && (
@@ -98,7 +98,7 @@ export const LoginForm = () => {
       </div>
       <button
         type="submit"
-        className="w-full bg-blue-600 text-white py-2 rounded-sm"
+        className="w-full bg-orange-500 text-white py-2 rounded-sm"
         disabled={pending}
       >
         {pending ? "Logging..." : "Login"}
@@ -107,7 +107,7 @@ export const LoginForm = () => {
         <div className="text-red-500 text-sm mt-1">{errors.formError}</div>
       )}
       <div className="text-center mt-4">
-        <Link href="/register" className="text-sm text-gray-500 mt-2 block">
+        <Link href="/register" className="text-sm text-neutral-500 mt-2 block">
           don't have an account? register now!
         </Link>
       </div>

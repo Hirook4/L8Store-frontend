@@ -35,10 +35,10 @@ export const FilterItem = ({ groupId, item }: Props) => {
         onChange={() => toggleFilter(groupId, item.id)}
         id={`ck-${item.id}`}
         type="checkbox"
-        className="size-6"
+        className="size-6 accent-orange-500"
         checked={hasFilter(groupId, item.id)}
       ></input>
-      <label htmlFor={`ck-${item.id}`} className="text-lg text-gray-500">
+      <label htmlFor={`ck-${item.id}`} className="text-lg text-neutral-500">
         {item.label}
       </label>
     </div>

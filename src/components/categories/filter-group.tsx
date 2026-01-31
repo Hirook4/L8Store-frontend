@@ -16,7 +16,7 @@ export const FilterGroup = ({ id, name, values }: Props) => {
 
   return (
     <div className="mb-8">
-      <div className="flex justify-between items-center border-b border-gray-200 pb-4">
+      <div className="flex justify-between items-center border-b border-neutral-500 pb-4">
         <div className="flex-1 font-bold text-xl">{name}</div>
         <div
           onClick={() => setOpened(!opened)}

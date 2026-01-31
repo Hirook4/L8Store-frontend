@@ -10,7 +10,7 @@ type Props = {
 export const FooterButton = ({ href, icon, label }: Props) => {
   return (
     <Link href={href}>
-      <div className="flex items-center gap-4 border border-gray-700 rounded-sm p-4 hover:bg-gray-900">
+      <div className="flex items-center gap-4 border border-neutral-500 rounded-sm p-4 hover:bg-neutral-900">
         <Image src={icon} alt="" width={24} height={24} />
         {label && <div className="flex-1">{label}</div>}
       </div>

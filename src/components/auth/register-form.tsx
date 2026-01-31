@@ -74,7 +74,7 @@ export const RegisterForm = () => {
   return (
     <form
       onSubmit={handleSubmit}
-      className="bg-white border border-gray-300 p-8 rounded-sm"
+      className=" border border-neutral-300 p-8 rounded-sm"
     >
       <h2 className="text-xl font-bold mb-4">Register</h2>
       <div className="mb-4">
@@ -85,7 +85,7 @@ export const RegisterForm = () => {
           type="text"
           value={form.name}
           onChange={handleChange}
-          className="w-full border border-gray-300 rounded-sm px-3 py-2"
+          className="w-full border border-neutral-300 rounded-sm px-3 py-2"
           disabled={pending}
         />
         {errors.name && (
@@ -99,7 +99,7 @@ export const RegisterForm = () => {
           type="email"
           value={form.email}
           onChange={handleChange}
-          className="w-full border border-gray-300 rounded-sm px-3 py-2"
+          className="w-full border border-neutral-300 rounded-sm px-3 py-2"
           disabled={pending}
         />
         {errors.email && (
@@ -113,7 +113,7 @@ export const RegisterForm = () => {
           type="password"
           value={form.password}
           onChange={handleChange}
-          className="w-full border border-gray-300 rounded-sm px-3 py-2"
+          className="w-full border border-neutral-300 rounded-sm px-3 py-2"
           disabled={pending}
         />
         {errors.password && (
@@ -127,7 +127,7 @@ export const RegisterForm = () => {
           type="password"
           value={form.confirmPassword}
           onChange={handleChange}
-          className="w-full border border-gray-300 rounded-sm px-3 py-2"
+          className="w-full border border-neutral-300 rounded-sm px-3 py-2"
           disabled={pending}
         />
         {errors.confirmPassword && (
@@ -138,7 +138,7 @@ export const RegisterForm = () => {
       </div>
       <button
         type="submit"
-        className="w-full bg-blue-600 text-white py-2 rounded-sm"
+        className="w-full bg-orange-500 text-white py-2 rounded-sm"
         disabled={pending}
       >
         {pending ? "Registering..." : "Register"}
@@ -147,7 +147,7 @@ export const RegisterForm = () => {
         <div className="text-red-500 text-sm mt-1">{errors.formError}</div>
       )}
       <div className="text-center mt-4">
-        <Link href="/login" className="text-sm text-gray-500 mt-2 block">
+        <Link href="/login" className="text-sm text-neutral-500 mt-2 block">
           already have an account? log in!
         </Link>
       </div>

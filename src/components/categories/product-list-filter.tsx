@@ -50,7 +50,7 @@ export const ProductListFilter = ({ category, metadata, filters }: Props) => {
       <div className="flex flex-col md:flex-row gap-3 justify-between items-start md:items-center">
         <div className="text-3xl">
           {loading && (
-            <div className="bg-gray-200 w-24 h-6 rounded animate-pulse"></div>
+            <div className="bg-neutral-200 w-24 h-6 rounded animate-pulse"></div>
           )}
           {!loading && (
             <>
@@ -63,16 +63,15 @@ export const ProductListFilter = ({ category, metadata, filters }: Props) => {
           <select
             defaultValue={order}
             onChange={handleSelectChanged}
-            className="flex-1 flex items-center h-14 px-6 bg-white border border-gray-200 rounded-sm text-gray-500"
+            className="flex-1 flex items-center h-14 px-6 bg-black border border-neutral-500 rounded-sm"
           >
             <option value="views">Popularity</option>
             <option value="price">Price</option>
             <option value="selling">Best Sellers</option>
           </select>
-
           <div
             onClick={() => setFilterOpened(!filterOpened)}
-            className="flex-1 flex md:hidden items-center h-14 px-6 bg-white border border-gray-200 rounded-sm text-gray-500"
+            className="flex-1 flex md:hidden items-center h-14 px-6  border border-neutral-500 rounded-sm text-neutral-500"
           >
             Filter By
           </div>

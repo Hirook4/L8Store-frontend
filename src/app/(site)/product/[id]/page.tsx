@@ -22,7 +22,7 @@ export default async function Page({ params }: Props) {
 
   return (
     <div>
-      <div className="text-gray-500 mb-4">
+      <div className="text-neutral-500 mb-4">
         <Link href={""}>Home</Link> &gt;{" "}
         <Link href={`/category/${data.category.slug}`}>
           {data.category.name}

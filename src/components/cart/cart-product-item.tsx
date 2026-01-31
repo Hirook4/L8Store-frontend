@@ -38,8 +38,8 @@ export const CartProductItem = ({ item }: Props) => {
   };
 
   return (
-    <div className="flex items-center p-6 gap-4 md:gap-8 border-0 md:border-b border-gray-200">
-      <div className="border border-gray-200 p-1">
+    <div className="flex items-center p-6 gap-4 md:gap-8 border-0 md:border-b border-neutral-500">
+      <div className="border border-neutral-500 p-1">
         <Image
           src={item.product.image}
           alt={item.product.label}
@@ -51,19 +51,19 @@ export const CartProductItem = ({ item }: Props) => {
       <div className="flex-1 flex flex-col md:flex-row justify-between md:items-center">
         <div>
           <div className="text-sm mb-2">{item.product.label}</div>
-          <div className="hidden md:block text-xs text-gray-500">
+          <div className="hidden md:block text-xs text-neutral-500">
             C0D: {item.product.id}
           </div>
         </div>
         <div>
-          <div className="w-30 flex text-gray-500 border border-gray-200 rounded-sm text-center">
+          <div className="w-30 flex text-white border border-neutral-500 rounded-sm text-center">
             <div
               onClick={handleMinus}
               className="flex cursor-pointer text-2xl justify-center items-center size-10"
             >
               -
             </div>
-            <div className="flex text-lg justify-center items-center size-10 border-x border-gray-200">
+            <div className="flex text-lg justify-center items-center size-10 border-x border-neutral-500">
               {item.quantity}
             </div>
             <div
@@ -76,11 +76,11 @@ export const CartProductItem = ({ item }: Props) => {
         </div>
       </div>
       <div className="w-24 md:w-40 flex flex-col md:flex-row justify-between items-end md:items-center">
-        <div className="text-lg text-blue-600">
+        <div className="text-lg text-orange-500">
           $ {item.product.price.toFixed(2)}
         </div>
         <div>
-          <div className="cursor-pointer size-12 border border-gray-200 rounded-sm flex justify-center items-center">
+          <div className="cursor-pointer size-12 border border-neutral-500 rounded-sm flex justify-center items-center">
             <Image
               onClick={handleRemove}
               src={"/assets/ui/trash.png"}

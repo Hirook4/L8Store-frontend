@@ -60,7 +60,7 @@ export const Banners = ({ list }: Props) => {
         {list.map((banner, index) => (
           <div
             key={index}
-            className="size-4 bg-blue-600 rounded-full cursor-pointer"
+            className="size-4 bg-orange-500 rounded-full cursor-pointer"
             style={{ opacity: currentImage == index ? 1 : 0.5 }}
             onClick={() => handleBannerClick(index)}
           ></div>

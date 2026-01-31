@@ -21,10 +21,10 @@ export const ShippingBoxNotLogged = () => {
         placeholder="type your zip code"
         value={cartStore.shippingZipCode}
         onChange={(e) => cartStore.setShippingZipcode(e.target.value)}
-        className="flex-1 px-6 py-5 bg-white border boder-gray-200 rounded-sm"
+        className="flex-1 px-6 py-5  border border-neutral-500 rounded-sm"
       />
       <button
-        className="cursor-pointer text-white  px-6 py-5 bg-blue-600  border-0 rounded-sm"
+        className="cursor-pointer text-white  px-6 py-5 bg-orange-500  border-0 rounded-sm"
         onClick={handleUpdateShipping}
       >
         calculate

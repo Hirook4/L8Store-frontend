@@ -11,7 +11,9 @@ export default function SiteLayout({
     <div>
       <StoreHydration />
       <Header />
-      <main className="w-full max-w-6xl mx-auto p-6">{children}</main>
+      <div className="bg-black">
+        <main className="w-full max-w-6xl mx-auto p-6">{children}</main>
+      </div>
       <Footer />
     </div>
   );

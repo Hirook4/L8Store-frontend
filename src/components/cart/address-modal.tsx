@@ -66,7 +66,7 @@ export const AddressModal = ({ open, onAdd, onClose }: Props) => {
   };
 
   return (
-    <div className="fixed inset-0 flex justify-center items-center bg-black/80 z-50">
+    <div className="bg-black/95 fixed inset-0 flex justify-center items-center z-50">
       <button
         className="absolute top-2 right-5 text-5xl text-white"
         onClick={onClose}
@@ -74,11 +74,11 @@ export const AddressModal = ({ open, onAdd, onClose }: Props) => {
       >
         &times;
       </button>
-      <div className="bg-white p-6 rounded w-full max-w-md">
+      <div className=" p-6 rounded w-full max-w-md">
         <h2 className="text-2xl font-bold mb-4">add new address</h2>
         <form onSubmit={handleSubmit} className="flex flex-col gap-2">
           <input
-            className="border border-gray-200 px-3 py-2 rounded outline-0"
+            className="border border-neutral-500 px-3 py-2 rounded outline-0"
             type="text"
             name="zipcode"
             placeholder="zipcode"
@@ -87,7 +87,7 @@ export const AddressModal = ({ open, onAdd, onClose }: Props) => {
             disabled={pending}
           />
           <input
-            className="border border-gray-200 px-3 py-2 rounded outline-0"
+            className="border border-neutral-500 px-3 py-2 rounded outline-0"
             type="text"
             name="street"
             placeholder="street"
@@ -96,7 +96,7 @@ export const AddressModal = ({ open, onAdd, onClose }: Props) => {
             disabled={pending}
           />
           <input
-            className="border border-gray-200 px-3 py-2 rounded outline-0"
+            className="border border-neutral-500 px-3 py-2 rounded outline-0"
             type="text"
             name="number"
             placeholder="number"
@@ -105,7 +105,7 @@ export const AddressModal = ({ open, onAdd, onClose }: Props) => {
             disabled={pending}
           />
           <input
-            className="border border-gray-200 px-3 py-2 rounded outline-0"
+            className="border border-neutral-500 px-3 py-2 rounded outline-0"
             type="text"
             name="city"
             placeholder="city"
@@ -114,7 +114,7 @@ export const AddressModal = ({ open, onAdd, onClose }: Props) => {
             disabled={pending}
           />
           <input
-            className="border border-gray-200 px-3 py-2 rounded outline-0"
+            className="border border-neutral-500 px-3 py-2 rounded outline-0"
             type="text"
             name="state"
             placeholder="state"
@@ -123,7 +123,7 @@ export const AddressModal = ({ open, onAdd, onClose }: Props) => {
             disabled={pending}
           />
           <input
-            className="border border-gray-200 px-3 py-2 rounded outline-0"
+            className="border border-neutral-500 px-3 py-2 rounded outline-0"
             type="text"
             name="country"
             placeholder="country"
@@ -132,7 +132,7 @@ export const AddressModal = ({ open, onAdd, onClose }: Props) => {
             disabled={pending}
           />
           <input
-            className="border border-gray-200 px-3 py-2 rounded outline-0"
+            className="border border-neutral-500 px-3 py-2 rounded outline-0"
             type="text"
             name="complement"
             placeholder="complement"
@@ -142,7 +142,7 @@ export const AddressModal = ({ open, onAdd, onClose }: Props) => {
           />
           <button
             type="submit"
-            className=" cursor-pointer bg-blue-600 text-white p-4 rounded-sm"
+            className=" cursor-pointer bg-orange-500 text-white p-4 rounded-sm"
             disabled={pending}
           >
             {pending ? "saving..." : "save address"}

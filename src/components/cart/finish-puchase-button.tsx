@@ -19,7 +19,7 @@ export const FinishPurchaseButton = () => {
     const sessionUrl = await finishCart(
       token,
       cartStore.selectedAddressId,
-      cartStore.cart
+      cartStore.cart,
     );
 
     if (sessionUrl) {
@@ -39,7 +39,7 @@ export const FinishPurchaseButton = () => {
     return (
       <Link
         href={"/login"}
-        className="block w-full text-center text-white  px-6 py-5 bg-blue-600  border-0 rounded-sm"
+        className="block w-full text-center text-white  px-6 py-5 bg-orange-500  border-0 rounded-sm"
       >
         log in to finish purchase
       </Link>
@@ -50,7 +50,7 @@ export const FinishPurchaseButton = () => {
     <button
       disabled={cartStore.selectedAddressId ? false : true}
       onCanPlay={handleFinishButton}
-      className="cursor-pointer w-full text-center text-white  px-6 py-5 bg-blue-600  border-0 rounded-sm disabled:opacity-50"
+      className="cursor-pointer w-full text-center text-white  px-6 py-5 bg-orange-500  border-0 rounded-sm disabled:opacity-50"
     >
       finish purchase
     </button>

@@ -68,12 +68,11 @@ export const ShippingBoxLogged = () => {
       <select
         value={cartStore.selectedAddressId ?? ""}
         onChange={handleSelectAddress}
-        className="flex-1 px-6 py-5 bg-white border border-gray-200 rounded-sm"
+        className="flex-1 px-6 py-5 bg-black border border-neutral-500 rounded-sm"
       >
         <option value="">
           {addresses.length === 0 ? "no addresses found" : "select an address"}
         </option>
-
         {addresses.map((item) => (
           <option key={item.id} value={item.id}>
             {item.street}, {item.number} - {item.city} ({item.zipcode})
